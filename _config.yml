@@ -14,7 +14,8 @@ auto: true
 server: false
 
 baseurl: /
-url: 
+safe: true
+url: "http://juliuz71.github.io"
 
 # Site source
 source: .
