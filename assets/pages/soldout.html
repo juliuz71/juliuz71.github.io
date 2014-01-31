@@ -1,0 +1,16 @@
+---
+layout: default
+title: Soldout
+permalink: /soldout/
+---
+
+{% for post in site.posts %}
+  {% if post.tag == "soldout" %}<!-- soldout -->
+    {% if post.layout == "post" %}<!-- post -->
+      {% include item.html %}<!-- render -->
+    {% endif %}
+    {% if post.layout == "header" %}<!-- header -->
+      {% include header.html %}<!-- render -->
+    {% endif %}
+  {% endif %}
+{% endfor %}

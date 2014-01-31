@@ -1,0 +1,20 @@
+---
+layout: series
+title: Series
+permalink: /series/
+---
+
+<div class="grid">
+  <div class="unit whole header align-center">
+      <h1 class="secondary">Record Series</h1>
+  </div><!-- /grid -->
+</div><!-- /unit-whole -->
+
+<div class="grid align-center">
+{% for labels in site.data.labels %}
+  <div class="unit whole series">
+    <h2><a href="{{ site.url }}{{ site.baseurl }}/{{ labels.code }}/">{{ labels.name }}</a></h2>
+    <h3>{{ labels.description }}</h3>
+  </div>
+{% endfor %}
+</div>
