@@ -1,0 +1,31 @@
+<div class="unit one-third">
+
+	<h1>Posts</h1>
+	{% for post in site.posts limit:3 %}
+		{% if post.title != page.title %}
+			<div class="{% cycle 'odd', 'even' %}">
+				<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+				{{ post.date | date: "%m/%d/%Y" }}
+				<p>{{ post.excerpt | markdownify }}</p>
+				<br>			
+			</div>
+		{% endif %}
+	{% endfor %}
+	
+	{% assign counter=0 %}
+	{% for post in site.posts %}
+		{% if post.category == page.category %}
+			{% if post.title != page.title %}
+				{% if counter == 0 %}
+					<h1>{{ page.category }}</h1>
+					{% assign counter=counter | plus:1 %} 
+				{% endif %}
+				<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+				{{ post.date | date: "%m/%d/%Y" }}
+				<br>
+			{% endif %}
+
+		{% endif %}
+	{% endfor %}
+
+</div>

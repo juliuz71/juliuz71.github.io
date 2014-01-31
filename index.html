@@ -1,0 +1,13 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+	
+{% for post in site.posts %}
+
+    {{ post.date | date: "%B %e, %Y" }}
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+	<br>
+
+{% endfor %}

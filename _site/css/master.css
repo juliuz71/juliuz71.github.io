@@ -1,0 +1,70 @@
+/* links */
+
+a:link, a:visited { color: blue; }
+a:hover, a:active { color: red;}
+a.active { text-decoration: none;}
+
+/* 	alternate colors */
+
+.odd { color: #222; }
+.even { color: #555; }
+
+/**
+ * MENU SECTION
+ *
+ */
+
+body > header h1, body > header nav {
+	display: inline-block;
+}
+nav li {
+	display: inline-block;	margin-right: 10px;
+}
+
+/**
+ * TYPOGRAPHY
+ *
+ */
+
+body{
+	font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 21px;
+	font-weight: 300;
+}
+
+strong{ font-weight: 700; }
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+/**
+ * ARTICLE
+ *
+ */
+
+article {
+  background: whitesmoke;
+  border-radius: 10px;
+  padding: 40px 40px 30px;
+  margin: 0 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}
+
+/**
+ * PAGINATION
+ *
+ */
+.section-nav {
+	text-align: center;
+	padding-top: 40px;
+	position: relative;
+	margin: 40px -20px 10px;
+}
+.section-nav > div {
+	width: 49.5%;
+}
+.align-right { text-align:right; }
+.align-left { text-align:left; }
+.left{ float:left; }
+.right{ float:right; }

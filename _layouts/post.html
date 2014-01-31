@@ -1,0 +1,23 @@
+{% include top.html %}
+
+<section>
+	
+	<div class="grid">
+		<div class="unit two-thirds">
+
+			<article>
+				<h1>{{ page.title }}</h1>
+				<h5>{{ page.date | date: "%m/%d/%Y" }} - <em>{{ page.category }}</em></h5>
+
+				{{ content }}
+
+				{% include pagination.html %}
+			</article>
+
+		</div>
+		{% include sidebar.html %}
+	</div>
+	
+</section>
+
+{% include bottom.html %}

@@ -1,0 +1,8 @@
+<div class="section-nav">
+	{% if page.next %} 
+		<div class="left align-right"><a rel="next" href="{{ site.baseurl }}{{ page.next.url }}">&lsaquo; Newer</a></div>
+	{% endif %}
+	{% if page.previous %} 
+		<div class="right align-left"><a rel="prev" href="{{ site.baseurl }}{{ page.previous.url }}">Older &rsaquo;</a></div>
+	{% endif %}
+</div>
