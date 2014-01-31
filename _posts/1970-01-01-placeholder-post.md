@@ -2,6 +2,7 @@
 layout: post
 title: Placeholder post
 category: rock
+tags: [lp, offerte]
 ---
 
-**{{ page.title }}** written in markdown.
+ written in markdown.

@@ -10,6 +10,8 @@
 				<h5>{{ page.date | date: "%m/%d/%Y" }} - <em>{{ page.category }}</em></h5>
 
 				{{ content }}
+				
+				Tags: {% for tag in page.tags %} <a href="/search.html?tags={{ tag }}">{{ tag | downcase }}</a> {% endfor %}
 
 				{% include pagination.html %}
 			</article>
