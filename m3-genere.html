@@ -14,7 +14,7 @@ permalink: genere.html
 				<h2><strong>{{ cat }}</strong></h2>
 				{% assign counter=counter | plus:1 %} 
 			{% endif %}
-			<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a><br>
+			<a href="{{ site.url }}{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a><br>
 			{% assign counter=counter | plus:1 %}
 			{% endif %}
 		{% endfor %}
