@@ -14,7 +14,7 @@ auto: true
 server: false
 
 baseurl: /
-url: http://localhost:4000
+url: 
 
 # Site source
 source: .
