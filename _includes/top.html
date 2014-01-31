@@ -9,7 +9,13 @@
 <link rel="stylesheet" href="/assets/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
 <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
 <script defer src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script defer src="/assets/js/alexpearce.js"></script>
+<!-- <script defer src="/assets/js/alexpearce.js"></script> -->
+<!-- LOAD PAGE SCRIPTS -->
+{% if page.script %}
+  {% for script in page.script %}
+  <script src="{{ site.url }}{{ site.baseurl }}/assets/{{ script }}"></script>
+  {% endfor %}
+{% endif %}
 </head>
 <body class="wrap">
 	<header>
