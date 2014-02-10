@@ -1,0 +1,5 @@
+<div>
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <h3>{{ post.excerpt | strip_html }}</h3>
+  <p class="metadata"><span class="date">{{ post.date | date_to_long_string }}</span><span class="category"><a href="/search/?string={{ post.category }}">{{ post.category }}</a> category</p>
+</div>

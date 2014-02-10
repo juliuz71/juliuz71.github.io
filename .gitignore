@@ -1,2 +1,5 @@
 .DS_Store
+*.psd
+psd*
 _site
+*.tmproj

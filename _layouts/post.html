@@ -1,25 +1,26 @@
 {% include top.html %}
-
-<section>
-	
-	<div class="grid">
-		<div class="unit two-thirds">
-
-			<article>
-				<h1>{{ page.title }}</h1>
-				<h5>{{ page.date | date: "%m/%d/%Y" }} - <em>{{ page.category }}</em></h5>
-
-				{{ content }}
-				
-				Tags: {% for tag in page.tags %} <a href="/search.html?tags={{ tag }}">{{ tag | downcase }}</a> {% endfor %}
-
-				{% include pagination.html %}
-			</article>
-
-		</div>
-		{% include sidebar.html %}
+<article{% if page.class %} class="{{ page.class }}"{% endif %}>
+<div>
+  <h1>{{ page.title }}</h1>
+	<h2>{{ page.excerpt }}</h2>
+  <p class="metadata">
+    <span class="date">{{ page.date | date: "%e %B %Y" }}</span>
+    <span class="category"><a href="/search/?string={{ page.category }}">{{ page.category }}</a> category</span>
+  </p>
+	<div class="content">
+	  {{ content | replace: page.excerpt, '' }}
 	</div>
-	
-</section>
-
+	<p class="metadata">
+    <span class="tags">
+      {% if page.tags.size > 0 %}tagged {% for tag in page.tags %}<a href="/search/?string={{ tag }}">{{ tag }}</a>{% if forloop.last %}{% else %}, {% endif %}{% endfor %}{% endif %}
+    </span>
+    <span class="author">
+      {% if page.author %}author {{ page.author }}{% endif %}
+    </span>
+	</p>
+	<div class="pagination clearfix">
+	 	{% include pagination.html %}
+	</div>
+</div>
+</article>
 {% include bottom.html %}

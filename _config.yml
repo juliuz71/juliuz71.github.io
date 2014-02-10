@@ -1,36 +1,18 @@
-# auto: true
-# markdown: rdiscount
-# permalink: /:categories/:title.html
-# url: http://trasparente.github.io/
-# baseurl: http://trasparente.github.io
+url: 
+name: trasparente
+title: trasparente homepage
+description: yet another jekyll boilerplate
 
-# https://github.com/mojombo/jekyll/wiki/Configuration
+# CSS THEMES in folder /assets/css/
+css: [ 'normalize.css', 'font/gloriola.css', 'pygments.css', 'base.css' ]
 
-# Don't use custom plugins
-safe: true
-# Regeneration files when changed
-auto: true
-# Don't start the server
-server: false
+# SCRIPTS in folder /assets/js/
+script: [ 'jquery-1.10.1.min.js', 'base.js' ]
 
+# JEKYLL
+excerpt_separator: "\n\n"
 baseurl: /
-safe: true
-url: "http://juliuz71.github.io"
-
-# Site source
-source: .
-# Where to put the compiled site
-destination: ./_site
-# Markdown engine
 markdown: rdiscount
-# Use Pygments for syntax highlighting
 pygments: true
-
-# Exclude these files from compilation
-exclude: [Gemfile, Gemfile.lock, CNAME, vendor, bin]
-
-# Don't produce a 'related posts' index
-lsi: false
-
-# Permalink style
-permalink: /:categories/:title.html
+relative_permalinks: false
+permalink: /:categories/:title

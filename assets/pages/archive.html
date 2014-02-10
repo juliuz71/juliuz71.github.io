@@ -1,0 +1,13 @@
+---
+layout: archive
+title: Archive
+permalink: /archive/
+---
+
+{% for post in site.posts %}
+  {% if post.layout == 'post' %}
+  <article class="{% cycle 'odd', 'even' %}">
+  {% include archive-item.html %}
+  </article>
+  {% endif %}
+{% endfor %}

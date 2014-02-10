@@ -1,8 +1,32 @@
-<div class="section-nav">
-	{% if page.next %} 
-		<div class="left align-right"><a rel="next" href="{{ page.next.url }}">&lsaquo; Newer</a></div>
-	{% endif %}
-	{% if page.previous %} 
-		<div class="right align-left"><a rel="prev" href="{{ page.previous.url }}">Older &rsaquo;</a></div>
-	{% endif %}
+<div class="next">
+  {% if page.next %}
+  	{% assign nextone = page.next %}
+  	{% if nextone.layout == 'header' %}
+      {% if nextone.next %}
+        <h5>Previous</h5>
+        <h4><a rel="prev" href="{{ nextone.next.url }}" >{{ nextone.next.title }}</a></h4>
+        <h5><span class="date">{{ nextone.next.date | date_to_long_string }}</span><span class="category">{{ nextone.next.category}} category</span></h5>
+      {% endif %}
+    {% else %}
+      <h5>Previous</h5>
+      <h4><a rel="next" href="{{ page.next.url }}" >{{ page.next.title }}</a></h4>
+      <h5><span class="date">{{ page.next.date | date_to_long_string }}</span><span class="category">{{ page.next.category}} category</span></h5>
+  	{% endif %}
+  {% endif %}
+</div>
+<div class="previous">
+  {% if page.previous %}
+  	{% assign preprevious = page.previous %}
+  	{% if preprevious.layout == 'header' %}
+      {% if preprevious.previous %}
+        <h5>Next</h5>
+        <h4><a rel="prev" href="{{ preprevious.previous.url }}" >{{ preprevious.previous.title }}</a></h4>
+        <h5><span class="date">{{ preprevious.previous.date | date_to_long_string }}</span><span class="category">{{ preprevious.previous.category}} category</span></h5>
+      {% endif %}
+    {% else %}
+      <h5>Next</h5>
+      <h4><a rel="prev" href="{{ page.previous.url }}" >{{ page.previous.title }}</a></h4>
+      <h5><span class="date">{{ page.previous.date | date_to_long_string }}</span><span class="category">{{ page.previous.category}} category</span></h5>
+      {% endif %}
+  {% endif %}
 </div>

@@ -1,1 +1,1 @@
-https://github.com/petrosh/jekyll-site/tree/gh-pages/_posts
+https://github.com/trasparente/trasparente.github.io/tree/master/_posts

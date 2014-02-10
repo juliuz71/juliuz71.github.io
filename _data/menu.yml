@@ -1,0 +1,17 @@
+# SITE MENÙ
+#
+# name: <a> text
+# url: <a> href
+# description: <a> title
+#
+- name: Home
+  url: /
+  description: Home page
+
+- name: Archive
+  url: /archive/
+  description: Post archive
+
+- name: Search
+  url: /search/
+  description: Search page

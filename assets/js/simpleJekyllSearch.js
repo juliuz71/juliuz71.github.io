@@ -1,12 +1,13 @@
 (function($) {
     $.fn.simpleJekyllSearch = function(options) {
         var settings = $.extend({
-            jsonFile            : '/raveup/search.json',
-            template            : '<li><a href="/raveup/{url}" title="{desc}">{title}</a><br><small>{item}</small></li>',
+            jsonFile            : '/search.json',
+            template            : '<article><div><h2><a href="{url}">{title}</a></h2><h3>{excerpt}</h3><p class="metadata"><span class="date">{date}</span><span class="category"><a href="/search/?string={category}">{category}</a> category</p></div></article>',
             searchResults       : '.results',
             searchResultsTitle  : '',
             limit               : '10',
-            noResults           : '<p>Nothing found...<br/><small>Try another string</small></p>'
+            noResults           : '<article><h2>Nothing found...</h2><h3>Try another string</h3></article>',
+            stringa             : ''
         }, options);
 
         var jsonData = [],
@@ -35,6 +36,9 @@
         }
 
         function registerEvent(){
+            //check setting string
+            if(settings.stringa!='')writeMatches( performSearch( settings.stringa ) );
+            // normal
             origThis.keyup(function(e){
                 if(e.which === 13){
                     if(matches)

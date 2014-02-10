@@ -8,12 +8,11 @@ permalink: /search.json
         {% if post.layout == 'post' %}
             {
                 "title"     : "{{ post.title }}",
-                "desc"      : "{{ post.title }}",
-                "category"  : "{{ post.category }}",
                 "url"       : "{{ post.url }}",
-                "item"      : "{{ post.item }}",
-                "volume"    : "{{ post.volume }}",
-                "image"     : "{{ post.image }}"
+                "date"      : "{{ post.date | date: "%e %B %Y" }}",
+                "tags"      : "{% for tags in post.tags %}{{ tags }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}",
+                "excerpt"   : "{{ post.excerpt | strip_newlines | strip_html }}",
+                "category"  : "{{ post.category }}"
             } {% if forloop.last %}{% else %},{% endif %}
         {% endif %}
     {% endfor %}

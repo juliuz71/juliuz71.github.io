@@ -1,0 +1,4 @@
+<div>
+  <h1>{{ post.title }}</h1>
+  {% if post.excerpt != empty %}<h2>{{ post.excerpt | strip_html }}</h2>{% endif %}
+</div>
